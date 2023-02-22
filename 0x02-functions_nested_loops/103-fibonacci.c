@@ -13,11 +13,11 @@ unsigned long int aft = 1;
 unsigned long int R = 0;
 unsigned long int sum = 0;
 
-															while (lim > R)
+    while (lim > R)
 																		{
 															R = bef + aft;
 
-															if ((R % 2) == 0)
+    if ((R % 2) == 0)
 															{
 																														sum += R;
 																														}

@@ -1,12 +1,10 @@
 #include <stdio.h>
 
-/**
- *  * main - fibonacci <3
- *   *
- *    * Purpose - no hardcode
- *     *
- *      * Return:  (Success)
- *       */
+/*
+    * main - fibonacci <3
+    * Purpose - no hardcode
+    * Return:  (Success)
+    */
 
 int main(void)
 {
@@ -23,7 +21,7 @@ int main(void)
 
 											for (i = 1; i < 91; i++)
 													{
-																printf(", %lu", aft);
+    printf(", %lu", aft);
 																		aft += bef;
 																				bef = aft - bef;
 																					}
@@ -33,8 +31,8 @@ int main(void)
 														aft1 = (aft / l);
 															aft2 = (aft % l);
 																for (i = 92; i < 99; ++i)
-																		{
-																					printf(", %lu", aft1 + (aft2 / l));
+																		{					
+    printf(", %lu", aft1 + (aft2 / l));
 																							printf("%lu", aft2 % l);
 																									aft1 = aft1 + bef1;
 																											bef1 = aft1 - bef1;
