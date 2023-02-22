@@ -5,7 +5,7 @@
   * Description: Checks for lowercase character.
   * @c: Contains value to be compared
   * Return: Always 0 (Success)
-  */ 
+ */ 
 
 int _islower(int c)
 {
