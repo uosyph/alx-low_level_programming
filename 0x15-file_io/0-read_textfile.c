@@ -8,13 +8,14 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    char *mbuffer;
+    int filedata;
     ssize_t readfile, writefile;
+    char *mbuffer;
 
     if (!filename)
         return (0);
 
-    int filedata = open(filename, O_RDONLY);
+    filedata = open(filename, O_RDONLY);
 
     if (filedata == -1)
         return (0);
@@ -28,6 +29,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
     close(filedata);
     free(mbuffer);
-
+    
     return (writefile);
 }

@@ -8,12 +8,12 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-    int length = 0;
+    int filedata, content, length = 0;
 
     if (filename == 0)
         return (-1);
 
-    int filedata = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+    filedata = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 
     if (filedata == -1)
         return (-1);
@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
     {
         while (text_content[length])
             length++;
-        int content = write(filedata, text_content, length);
+        content = write(filedata, text_content, length);
 
         if (content == -1)
             return (-1);

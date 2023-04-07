@@ -8,12 +8,12 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-    int length = 0;
+    int filedata, writefile, length = 0;
 
     if (filename == 0)
         return (-1);
 
-    int filedata = open(filename, O_WRONLY | O_APPEND);
+     filedata = open(filename, O_WRONLY | O_APPEND);
 
     if (filedata == -1)
         return (-1);
@@ -22,7 +22,7 @@ int append_text_to_file(const char *filename, char *text_content)
     {
         while (text_content[length])
             length++;
-        int writefile = write(filedata, text_content, length);
+        writefile = write(filedata, text_content, length);
         if (writefile == -1)
             return (-1);
     }
