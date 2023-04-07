@@ -2,36 +2,32 @@
 
 /**
  * append_text_to_file - appends text at the end of a file
- * @filename: first argument, the filename.
+ * @filename: first argument, the name of the file.
  * @text_content: second argument, the added content.
- * Return: 1 if the file exists, -1 if file does not exist or failed.
+ * Return: 1 if the file exists, -1 if failed or file doesn't exist.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-    if (filename == NULL)
-    {
-        return -1;
-    }
-    if (text_content == NULL)
-    {
-        return 1;
-    }
+    int length = 0;
 
-    FILE *fp;
-    fp = fopen(filename, "a");
-    if (fp == NULL)
-    {
-        return -1;
-    }
+    if (filename == 0)
+        return (-1);
 
-    int len = strlen(text_content);
-    int bytes_written = fwrite(text_content, sizeof(char), len, fp);
-    fclose(fp);
+    int filedata = open(filename, O_WRONLY | O_APPEND);
 
-    if (bytes_written != len)
+    if (filedata == -1)
+        return (-1);
+
+    if (text_content)
     {
-        return -1;
+        while (text_content[length])
+            length++;
+        int writefile = write(filedata, text_content, length);
+        if (writefile == -1)
+            return (-1);
     }
 
-    return 1;
+    close(filedata);
+
+    return (1);
 }

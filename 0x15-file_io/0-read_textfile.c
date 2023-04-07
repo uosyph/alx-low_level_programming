@@ -8,27 +8,26 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    int file;
-    ssize_t readfile, writefile;
     char *mbuffer;
+    ssize_t readfile, writefile;
 
     if (!filename)
         return (0);
 
-    file = open(filename, O_RDONLY);
+    int filedata = open(filename, O_RDONLY);
 
-    if (file == -1)
+    if (filedata == -1)
         return (0);
 
     mbuffer = malloc(sizeof(char) * (letters));
     if (!mbuffer)
         return (0);
 
-    readfile = read(file, mbuffer, letters);
+    readfile = read(filedata, mbuffer, letters);
     writefile = write(STDOUT_FILENO, mbuffer, readfile);
 
-    close(file);
+    close(filedata);
     free(mbuffer);
-    
+
     return (writefile);
 }
