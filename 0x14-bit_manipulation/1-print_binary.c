@@ -1,30 +1,34 @@
 #include "main.h"
 
 /**
- * print_binary - prints the binary representation
- * of a number.
- * @i: unsigned long int.
- * Return: no return.
+ * print_binary - converts an unsigned integer to binary.
+ * @uint: the unsigned integer.
+ * Return: the converted binary.
  */
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int uint)
 {
-    int i;
-    unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
+    unsigned long int n_copy = uint, mask = 1;
+    int length = 0;
 
+    while (n_copy > 0)
+    {
+        length++;
+        n_copy >>= 1;
+    }
+    length -= 1;
+
+    /* create mask based on length of num */
+    if (length > 0)
+        mask = mask << length;
+
+    /* match each rightmost bit to see if 1 or 0 */
     while (mask > 0)
     {
-        putchar((n & mask) ? '1' : '0');
+        if (uint & mask)
+            _putchar('1');
+        else
+            _putchar('0');
+
         mask >>= 1;
     }
-}
-
-int main()
-{
-    unsigned long int n = 123456789;
-
-    printf("Binary representation of %lu is: ", n);
-    print_binary(n);
-    printf("\n");
-
-    return 0;
 }
