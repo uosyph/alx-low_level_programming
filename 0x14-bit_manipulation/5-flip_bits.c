@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * flip_bits - returns the number of bits you
+ * flip_bits - gets the number of bits you would
  * need to flip to get from one number to another.
- * @n: first number.
- * @m: second number.
- * Return: number of bits needed to filp from n to m.
+ * @n: the first number.
+ * @m: the second number.
+ * Return: the number of bits needed.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
@@ -19,15 +19,4 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
     }
 
     return count;
-}
-
-int main()
-{
-    unsigned long int n = 0b10101010;
-    unsigned long int m = 0b11001100;
-    unsigned int result = flip_bits(n, m);
-
-    printf("The number of bits needed to flip from %lu to %lu is %u\n", n, m, result);
-
-    return 0;
 }
