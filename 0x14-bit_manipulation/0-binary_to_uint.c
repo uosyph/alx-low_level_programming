@@ -27,25 +27,25 @@ unsigned int _strlen(const char *string)
 
 /**
  * binary_to_uint - converts a string from binary to a decimal number.
- * @binary_string: a string to convert.
+ * @b: a string to convert.
  * Return: the unsigned decimal number.
  */
-unsigned int binary_to_uint(const char *binary_string)
+unsigned int binary_to_uint(const char *b)
 {
     int i;
     unsigned int decimal, tmp, expo;
 
-    if (!binary_string)
+    if (!b)
         return (0);
 
     decimal = tmp = 0;
     expo = 1;
 
-    for (i = _strlen(binary_string) - 1; binary_string[i]; i--, expo *= 2)
+    for (i = _strlen(b) - 1; b[i]; i--, expo *= 2)
     {
-        if (binary_string[i] != '0' && binary_string[i] != '1')
+        if (b[i] != '0' && b[i] != '1')
             return (0);
-        tmp = _stoi(binary_string[i]);
+        tmp = _stoi(b[i]);
         decimal += tmp * expo;
     }
 
