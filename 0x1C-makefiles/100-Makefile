@@ -1,27 +1,19 @@
-.PHONY = all $(NAME) clean oclean fclean re
+CC = gcc
+SRC = main.c school.c
+OBJ = $(patsubst %.c,%.o,$(SRC))
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+.PHONY : all clean oclean fclean re
 
-CC=gcc
-CFLAGS=-Wall -Werror -Wextra -pedantic
-SRC=main.c school.c
-OBJ=$(SRC:.c=.o)
-NAME=school
-RM=rm
+all : m.h $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-all: $(NAME)
+clean :
+	$(RM) *~ $(NAME)
 
-%.o: %.c %.h
-	$(CC) -c $^
+oclean :
+	$(RM) $(OBJ)
 
-$(NAME): $(OBJ)
-	$(CC) $^ -o $@
+fclean : clean oclean
 
-clean:
-	$(RM) -f *~ $(NAME)
-
-oclean:
-	$(RM) -f $(OBJ)
-
-fclean:
-	$(RM) -f *~ $(OBJ) $(NAME)
-re:
-	$(RM) -f $(OBJ)
+re : oclean all
