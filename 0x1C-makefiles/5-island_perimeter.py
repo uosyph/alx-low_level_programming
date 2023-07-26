@@ -19,7 +19,8 @@ def island_perimeter(grid):
     width = 0
 
     if grid:
-        height = len(grid)
+        for row in grid:
+            height += 1
         width = len(grid[0])
         for x in range(height):
             for y in range(width):
@@ -37,4 +38,5 @@ def island_perimeter(grid):
                     if x - 1 >= 0:
                         if grid[x - 1][y] == 1:
                             touches += 1
-        return count * 4 - touches
+        count = count * 4 - touches
+        return count
