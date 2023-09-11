@@ -2,7 +2,7 @@
 
 /**
  * _binary_search - Uses binary search to find the given value in an array
- * @array: Pointer to the first element of the array to search in
+ * @array: Pointer to the first element of the sub array to search in
  * @left: Starting index of the sub array to search
  * @right: Ending index of the sub array to search
  * @value: Value to search for
