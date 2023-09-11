@@ -1,20 +1,7 @@
 #include "search_algos.h"
 
 /**
- * low - Finds the lower number between two number
- * @step: First number
- * @size: Second number
- * Return: Lower value number
- **/
-size_t low(size_t step, size_t size)
-{
-	if (step < size)
-		return (step);
-	return (size);
-}
-
-/**
- * jump_search - Uses a jump search to find the given value in an array
+ * jump_search - Uses a jump search to find the given value
  * @array: Pointer to the first element of the array to search in
  * @size: Number of elements in array
  * @value: Value to search for
@@ -22,40 +9,28 @@ size_t low(size_t step, size_t size)
  **/
 int jump_search(int *array, size_t size, int value)
 {
-	size_t step, previous_step;
+	size_t index, jump, step;
 
-	previous_step = 0;
-	step = 0;
-
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 
-	while (array[low(step, size - 1)] < value && step < size)
+	step = sqrt(size);
+
+	for (index = jump = 0; jump < size && array[jump] < value;)
 	{
-		printf("Value checked array[%lu] = [%d]\n",
-			   low(step, size - 1),
-			   array[low(step, size - 1)]);
-		previous_step = step;
-		step += sqrt(size);
+		printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
+		index = jump;
+		jump += step;
 	}
 
-	printf("Value found between indexes [%lu] and [%lu]\n",
-		   previous_step,
-		   step);
+	printf("Value found between indexes [%ld] and [%ld]\n", index, jump);
 
-	while (array[previous_step] <= (int)step && previous_step < size)
-	{
-		printf("Value checked array[%lu] = [%d]\n",
-			   previous_step,
-			   array[previous_step]);
+	jump = jump < size - 1 ? jump : size - 1;
 
-		if (array[previous_step] == value)
-			return (previous_step);
-		if (previous_step == low(step, size))
-			return (-1);
+	for (; index < jump && array[index] < value; index++)
+		printf("Value checked array[%ld] = [%d]\n", index, array[index]);
 
-		previous_step++;
-	}
+	printf("Value checked array[%ld] = [%d]\n", index, array[index]);
 
-	return (-1);
+	return (array[index] == value ? (int)index : -1);
 }
