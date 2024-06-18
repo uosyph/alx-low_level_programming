@@ -7,13 +7,11 @@
 # Low-Level Programming - Data Structures, Algorithms, Linux/Unix System Programming.
 
 This repository contains a collection of programs and scripts created during the low-level programming track of the ALX Software Engineering Program.
-
 These projects, primarily written in C, cover various fundamental topics including data structures, algorithms, pointers, memory allocation, and system programming.
 
 ## Overview
 
 This repository serves as a comprehensive guide and reference for the various projects completed during the low-level programming track.
-
 Each project is designed to build upon the previous ones, progressively increasing in complexity and covering a wide range of programming concepts and techniques.
 
 ## Projects
