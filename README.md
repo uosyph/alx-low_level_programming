@@ -6,9 +6,17 @@
 
 # Low-Level Programming - Data Structures, Algorithms, Linux/Unix System Programming.
 
-This repository is a collection of programs and scripts created during the low-level programming track in the ALX Software Engineering Program.<br>The repository contains multiple projects written in C, which cover topics such as data structures, algorithms, pointers, memory allocation, and more.
+This repository contains a collection of programs and scripts created during the low-level programming track of the ALX Software Engineering Program.
 
-## Structure
+These projects, primarily written in C, cover various fundamental topics including data structures, algorithms, pointers, memory allocation, and system programming.
+
+## Overview
+
+This repository serves as a comprehensive guide and reference for the various projects completed during the low-level programming track.
+
+Each project is designed to build upon the previous ones, progressively increasing in complexity and covering a wide range of programming concepts and techniques.
+
+## Projects
 
 -   [0x00. C - Hello, World](./0x00-hello_world)
 -   [0x01. C - Variables, if, else, while](./0x01-variables_if_else_while)
@@ -27,13 +35,24 @@ This repository is a collection of programs and scripts created during the low-l
 -   [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 -   [0x0F. C - Function pointers](./0x0F-function_pointers)
 -   [0x10. C - Variadic functions](./0x10-variadic_functions)
--   [0x11. C - printf](https://github.com/yousafesaeed/printf)
+-   [0x11. C - printf](https://github.com/uosyph/printf)
 -   [0x12. C - Singly linked lists](./0x12-singly_linked_lists)
 -   [0x13. C - More singly linked lists](./0x13-more_singly_linked_lists)
 -   [0x14. C - Bit manipulation](./0x14-bit_manipulation)
 -   [0x15. C - File I/O](./0x15-file_io)
--   [0x16. C - Simple Shell](https://github.com/yousafesaeed/simple_shell)
+-   [0x16. C - Simple Shell](https://github.com/uosyph/simple_shell)
 -   [0x17. C - Doubly linked lists](./0x17-doubly_linked_lists)
 -   [0x18. C - Dynamic libraries](./0x18-dynamic_libraries)
--   [0x19. C - Stacks, Queues - LIFO, FIFO](https://github.com/yousafesaeed/monty)
+-   [0x19. C - Stacks, Queues - LIFO, FIFO](https://github.com/uosyph/monty)
 -   [0x1A. C - Hash tables](./0x1A-hash_tables)
+-   [0x1B. C - Sorting algorithms & Big O](https://github.com/uosyph/sorting_algorithms)
+-   [0x1C. C - Makefiles](./0x1C-makefiles)
+-   [0x1D. C - Binary trees](https://github.com/uosyph/binary_trees)
+-   [0x1E. C - Search Algorithms](./0x1E-search_algorithms)
+
+## Author
+
+**Yousef Saeed**:
+[GitHub](https://github.com/uosyph)
+[LinkedIn](https://linkedin.com/in/uosyph)
+[X](https://twitter.com/uosyph)
